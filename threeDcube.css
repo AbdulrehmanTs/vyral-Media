@@ -1,0 +1,783 @@
+/* #right-cubes{
+    background: linear-gradient(to right, #46d7fc, #6b86f2);
+} */
+#cubes-container {
+    background: linear-gradient(130deg, rgb(255, 236, 133) 0%, rgb(236, 104, 91) 100%);
+}
+
+.threeD-cube-1 {
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    background: #fde181;
+    text-align: center;
+    transform: rotate(-25deg) skew(25deg);
+    translate: 0, 0;
+    top: -40%;
+    right: -10%;
+}
+
+.threeD-cube-1::before {
+    content: '';
+    position: absolute;
+    top: 150px;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: #fcd87f;
+    transform: rotate(0deg) skewY(-45deg);
+}
+
+.threeD-cube-1::after {
+    content: '';
+    position: absolute;
+    left: -150px;
+    bottom: -300px;
+    width: 100%;
+    height: 300px;
+    background: #f9be76;
+    transform: rotate(0deg) skewX(-45deg);
+}
+
+.threeD-cube-2 {
+    position: absolute;
+    width: 1000px;
+    height: 300px;
+    background: #fde181;
+    text-align: center;
+    padding-left: 20px;
+    transform: rotate(-30deg) skew(25deg);
+    translate: 0, 0;
+    left: 15%;
+    bottom: -5%;
+}
+
+.threeD-cube-2::after {
+    content: '';
+    position: absolute;
+    left: -150px;
+    bottom: -300px;
+    width: 100%;
+    height: 300px;
+    background: #f9be76;
+    transform: rotate(0deg) skewX(-45deg);
+}
+
+.threeD-cube-3 {
+    position: absolute;
+    width: 300px;
+    height: 800px;
+    background: linear-gradient(#81acfd, #6c54e6);
+    text-align: center;
+    transform: rotate(-30deg) skew(25deg);
+    translate: 0, 0;
+    z-index: 10;
+    bottom: -30%;
+    right: 20%;
+}
+
+.threeD-cube-3::before {
+    content: '';
+    position: absolute;
+    top: 150px;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: #7fb3fe;
+    transform: rotate(0deg) skewY(-45deg);
+}
+
+.threeD-cube-4 {
+    position: absolute;
+    width: 1000px;
+    height: 300px;
+    background: linear-gradient(to left, #86abfe, #4be2fe);
+    text-align: center;
+    padding-left: 20px;
+    transform: rotate(-30deg) skew(25deg);
+    translate: 0, 0;
+    left: 20%;
+    bottom: 30%;
+}
+
+.threeD-cube-4::after {
+    content: '';
+    position: absolute;
+    left: -150px;
+    bottom: -300px;
+    width: 100%;
+    height: 300px;
+    background: #6c53e6;
+    transform: rotate(0deg) skewX(-45deg);
+}
+
+.threeD-cube-4::before {
+    content: '';
+    position: absolute;
+    top: 150px;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: #81f2fd;
+    transform: rotate(0deg) skewY(-45deg);
+}
+
+.h-blue-s {
+    color: white;
+    font-size: 120px;
+    line-height: 120px;
+    transform: rotateZ(-30deg) skewX(155deg);
+    position: absolute;
+    left: 20%;
+    bottom: 48%;
+    z-index: 140;
+}
+
+.h-orange-s {
+    color: white;
+    font-size: 120px;
+    line-height: 120px;
+    transform: rotateZ(-30deg) skewX(155deg);
+    position: absolute;
+    left: 55%;
+    bottom: 50%;
+    z-index: 100;
+}
+
+.t-blue-s {
+    color: white;
+    font-size: 30px;
+    line-height: 35px;
+    transform: rotateZ(35deg) skewX(35deg);
+    position: absolute;
+    left: 54%;
+    bottom: 75%;
+    z-index: 100;
+}
+
+.t-orange-s {
+    /* color: rgb(255, 236, 133); */
+    color: white;
+    font-size: 30px;
+    line-height: 35px;
+    transform: rotateZ(-30deg) skewX(155deg);
+    position: absolute;
+    left: 58%;
+    bottom: 30%;
+    z-index: 100;
+}
+
+.laptop {
+    width: 400px;
+    position: absolute;
+    transform: rotateZ(357deg);
+    left: 36%;
+    bottom: 18%;
+    z-index: 100;
+}
+
+.tablet {
+    width: 300px;
+    position: absolute;
+    transform: rotateZ(357deg);
+    left: 29%;
+    bottom: 4%;
+    z-index: 100;
+}
+
+.mobile {
+    width: 200px;
+    position: absolute;
+    transform: rotateZ(357deg);
+    left: 24%;
+    bottom: -5%;
+    z-index: 100;
+}
+
+.iphone-cont {
+    height: 95px;
+    position: absolute;
+    transform: rotateZ(330deg) skewX(38deg);
+    left: 27%;
+    bottom: -4.5%;
+    z-index: 100;
+}
+
+.ipad-cont {
+    width: 140px;
+    height: 95px;
+    position: absolute;
+    transform: rotateZ(330deg) skewX(38deg);
+    left: 32%;
+    bottom: 8%;
+    z-index: 110;
+}
+
+.mac-cont,
+.mac-cont1,
+.mac-cont2,
+.mac-cont3 {
+    width: 240px;
+    height: 150px;
+    position: absolute;
+    transform: rotateZ(330deg) skewX(333deg);
+    left: 36%;
+    bottom: 38.5%;
+    z-index: 110;
+}
+
+
+
+@media (max-width:1535px) {
+    .threeD-cube-1 {
+        top: -15%;
+        right: -30%;
+    }
+
+    .threeD-cube-2 {
+        width: 1200px;
+        left: -20%;
+        bottom: -10%;
+    }
+
+    .threeD-cube-3 {
+        width: 300px;
+        height: 800px;
+        bottom: -40%;
+        right: 0%;
+    }
+
+    .threeD-cube-4 {
+        width: 1000px;
+        height: 300px;
+        left: 0;
+        bottom: 20%;
+    }
+
+    .laptop {
+        width: 320px;
+        left: 33%;
+        bottom: 25%;
+    }
+
+    .mac-cont,
+    .mac-cont1,
+    .mac-cont2,
+    .mac-cont3 {
+        width: 197px;
+        height: 121px;
+        left: 33%;
+        bottom: 41%;
+    }
+
+    .h-orange-s {
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    .t-orange-s {
+        font-size: 22px;
+        line-height: 25px;
+        left: 61%;
+        bottom: 34%;
+        z-index: 100;
+    }
+
+    .h-blue-s {
+        font-size: 100px;
+        line-height: 100px;
+        transform: rotateZ(-30deg) skewX(155deg);
+        position: absolute;
+        left: 12%;
+        bottom: 40%;
+        z-index: 140;
+    }
+
+    .tablet {
+        width: 250px;
+        left: 22.5%;
+        bottom: 12.5%;
+    }
+
+    .ipad-cont {
+        width: 131px;
+        height: 82px;
+        left: 26%;
+        bottom: 15.5%;
+    }
+
+    .mobile {
+        width: 155px;
+        left: 16%;
+        bottom: 6%;
+    }
+
+    .iphone-cont {
+        height: 70px;
+        left: 19.7%;
+        bottom: 7.2%;
+    }
+
+    .t-blue-s {
+        font-size: 22px;
+        line-height: 25px;
+        position: absolute;
+        left: 54%;
+        bottom: 68%;
+        z-index: 100;
+    }
+}
+
+@media (max-width: 1023px) {
+    .threeD-cube-1 {
+        height: 200px;
+        top: -8%;
+        right: -20%;
+    }
+
+    .threeD-cube-1::before {
+        top: 100px;
+        left: -200px;
+        width: 200px;
+    }
+
+    .threeD-cube-1::after {
+        left: -100px;
+        bottom: -200px;
+        height: 200px;
+    }
+
+    .threeD-cube-2 {
+        width: 1000px;
+        height: 200px;
+        left: -10%;
+        bottom: 0;
+    }
+
+    .threeD-cube-2::after {
+        left: -100px;
+        bottom: -200px;
+        height: 200px;
+    }
+
+    .threeD-cube-3 {
+        width: 200px;
+        bottom: -55%;
+        right: 10%;
+    }
+
+    .threeD-cube-4 {
+        height: 200px;
+        left: -5%;
+        bottom: 10%;
+    }
+
+    .h-orange-s {
+        font-size: 80px;
+        line-height: 80px;
+        left: 48%;
+        bottom: 54%;
+    }
+
+    .t-orange-s {
+        font-size: 20px;
+        line-height: 25px;
+        left: 56%;
+        bottom: 42%;
+    }
+
+    .laptop {
+        width: 285px;
+    }
+
+    .mac-cont,
+    .mac-cont1,
+    .mac-cont2,
+    .mac-cont3 {
+        width: 175px;
+        height: 113px;
+        left: 32.8%;
+        bottom: 41%;
+    }
+
+    .h-blue-s {
+        font-size: 80px;
+        line-height: 80px;
+        left: 16%
+    }
+
+    .tablet {
+        width: 210px;
+        left: 25.5%;
+        bottom: 13.5%;
+    }
+
+    .ipad-cont {
+        width: 115px;
+        height: 66px;
+        left: 28.2%;
+        bottom: 16.5%;
+    }
+
+    .mobile {
+        width: 130px;
+        left: 21%;
+        bottom: 8%;
+
+    }
+
+    .iphone-cont {
+        height: 56px;
+        left: 24%;
+        bottom: 9%;
+    }
+
+    .t-blue-s {
+        font-size: 20px;
+        line-height: 25px;
+        position: absolute;
+        left: 50%;
+        bottom: 60%;
+        z-index: 100;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .threeD-cube-1 {
+        height: 150px;
+        top: -8%;
+        right: -20%;
+    }
+
+    .threeD-cube-1::before {
+        top: 75px;
+        left: -150px;
+        width: 150px;
+    }
+
+    .threeD-cube-1::after {
+        left: -75px;
+        bottom: -150px;
+        height: 150px;
+    }
+
+    .threeD-cube-2 {
+        height: 150px;
+        left: -10%;
+        bottom: -10%;
+    }
+
+    .threeD-cube-2::after {
+        left: -75px;
+        bottom: -150px;
+        height: 150px;
+    }
+
+    .threeD-cube-3 {
+        width: 150px;
+        bottom: -70%;
+        right: 7%;
+    }
+
+    .threeD-cube-4 {
+        height: 150px;
+        left: 0%;
+        bottom: 5%;
+    }
+
+    .h-orange-s {
+        font-size: 60px;
+        line-height: 60px;
+        left: 52%;
+        bottom: 50%;
+    }
+
+    .t-orange-s {
+        font-size: 16px;
+        line-height: 22px;
+        left: 56%;
+        bottom: 36%;
+    }
+
+    .laptop {
+        width: 216px;
+        left: 37.5%;
+        bottom: 25.5%;
+    }
+
+    .mac-cont,
+    .mac-cont1,
+    .mac-cont2,
+    .mac-cont3 {
+        width: 134px;
+        height: 84px;
+        left: 37.3%;
+        bottom: 40%;
+    }
+
+    .h-blue-s {
+        font-size: 60px;
+        line-height: 60px;
+        left: 30%;
+        bottom: 35%;
+    }
+
+    .tablet {
+        width: 154px;
+        left: 31.5%;
+        bottom: 15.5%;
+    }
+
+    .ipad-cont {
+        width: 82px;
+        height: 49px;
+        left: 33.6%;
+        bottom: 18.1%;
+    }
+
+    .mobile {
+        width: 94px;
+        left: 28%;
+        bottom: 11%;
+    }
+
+    .iphone-cont {
+        height: 42px;
+        left: 30.3%;
+        bottom: 11.8%;
+    }
+
+    .t-blue-s {
+        font-size: 16px;
+        line-height: 22px;
+        left: 55%;
+        bottom: 57%;
+    }
+}
+
+@media (max-width: 639px) {
+    .threeD-cube-1 {
+        height: 100px;
+        top: -20%;
+        right: -12%;
+    }
+
+    .threeD-cube-1::before {
+        top: 50px;
+        left: -100px;
+        width: 100px;
+    }
+
+    .threeD-cube-1::after {
+        left: -50px;
+        bottom: -100px;
+        height: 100px;
+    }
+
+    .threeD-cube-2 {
+        height: 100px;
+        left: -10%;
+        bottom: -5%;
+    }
+
+    .threeD-cube-2::after {
+        left: -50px;
+        bottom: -100px;
+        height: 100px;
+    }
+
+    .threeD-cube-3 {
+        width: 100px;
+        bottom: -90%;
+        right: 10%;
+    }
+
+    .threeD-cube-4 {
+        height: 100px;
+        left: 0%;
+        bottom: 0%;
+    }
+
+
+
+    .h-orange-s {
+        font-size: 40px;
+        line-height: 40px;
+        left: 50%;
+        bottom: 59%;
+    }
+
+    .t-orange-s {
+        font-size: 14px;
+        line-height: 18px;
+        left: 53%;
+        bottom: 50%;
+    }
+
+    .laptop {
+        width: 137px;
+        left: 42.5%;
+        bottom: 39.5%;
+    }
+
+    .mac-cont,
+    .mac-cont1,
+    .mac-cont2,
+    .mac-cont3 {
+        width: 84px;
+        height: 53px;
+        left: 42.4%;
+        bottom: 50.5%;
+    }
+
+    .h-blue-s {
+        font-size: 40px;
+        line-height: 40px;
+        left: 39%;
+        bottom: 38%;
+    }
+
+    .tablet {
+        width: 99px;
+        left: 37.5%;
+        bottom: 29.5%;
+    }
+
+    .ipad-cont {
+        width: 53px;
+        height: 31px;
+        left: 38.9%;
+        bottom: 31.4%;
+    }
+
+    .mobile {
+        width: 59px;
+        left: 34.3%;
+        bottom: 23.8%;
+    }
+
+    .iphone-cont {
+        height: 27px;
+        left: 35.8%;
+        bottom: 24.2%;
+    }
+
+    .t-blue-s {
+        font-size: 14px;
+        line-height: 16px;
+        left: 54%;
+        bottom: 61%;
+    }
+}
+
+@media (max-width: 424px) {
+    .threeD-cube-1 {
+        height: 100px;
+        top: -30%;
+        right: -10%;
+    }
+
+    .threeD-cube-1::before {
+        top: 50px;
+        left: -100px;
+        width: 100px;
+    }
+
+    .threeD-cube-1::after {
+        left: -50px;
+        bottom: -100px;
+        height: 100px;
+    }
+
+    .threeD-cube-2 {
+        height: 100px;
+        left: -10%;
+        bottom: -15%;
+    }
+
+    .threeD-cube-2::after {
+        left: -50px;
+        bottom: -100px;
+        height: 100px;
+    }
+
+    .threeD-cube-3 {
+        bottom: -120%;
+        right: 15%;
+    }
+
+    .threeD-cube-4 {
+        left: -5%;
+        bottom: -10%;
+    }
+
+    .h-orange-s {
+        font-size: 30px;
+        line-height: 30px;
+        left: 51%;
+        bottom: 65%;
+    }
+
+    .t-orange-s {
+        font-size: 11px;
+        line-height: 13px;
+        left: 53%;
+        bottom: 55%;
+    }
+
+    .laptop {
+        width: 114px;
+        left: 43.5%;
+        bottom: 43.5%;
+    }
+
+    .mac-cont,
+    .mac-cont1,
+    .mac-cont2,
+    .mac-cont3 {
+        width: 69px;
+        height: 41px;
+        left: 43.4%;
+        bottom: 55.2%;
+    }
+
+    .h-blue-s {
+        font-size: 30px;
+        line-height: 30px;
+        left: 39%;
+        bottom: 44%;
+    }
+
+    .tablet {
+        width: 85px;
+        left: 39.5%;
+        bottom: 33.5%;
+    }
+
+    .ipad-cont {
+        width: 47px;
+        height: 27px;
+        left: 40.7%;
+        bottom: 35.6%;
+    }
+
+    .mobile {
+        width: 49px;
+        left: 37.3%;
+        bottom: 28.8%;
+    }
+
+    .iphone-cont {
+        height: 23px;
+        left: 38.4%;
+        bottom: 29.2%;
+    }
+
+    .t-blue-s {
+        font-size: 11px;
+        line-height: 11px;
+        left: 52%;
+        bottom: 62%;
+    }
+}

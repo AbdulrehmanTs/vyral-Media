@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind (CDN) -->
+  <link href="tailwind.css" rel="stylesheet" />
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Google Fonts (Poppins & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+
+  <!-- Google Material Icons (for search icon) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=search" />
+
+  <!-- Fontawesom CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Title -->
+  <title>Home - Trifid Media</title>
+</head>
+
+<body class="bg-black">
+  <!-- ================== NAVBAR ================== -->
+  <nav id="navbar" class="w-full h-20 flex fixed justify-center items-center bg-transparent font-[Poppins] z-30">
+    <div
+      class="max-[639px]:px-5 max-[639px]:w-full sm:w-xl md:w-3xl md:px-10 lg:w-full lg:px-10 flex items-center justify-between relative">
+      <!-- Logo -->
+
+      <div class="relative">
+        <img src="./assets/img/logo.jpg" class="h-12 cursor-pointer" alt="Trifid Media Logo" />
+      </div>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-menu hidden lg:flex gap-[38px] font-semibold text-[15px] text-white">
+        <!-- Menu Items -->
+        <li
+          class="nav-item relative inline-block leading-8 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white hover:after:w-full">
+          <a href="./index.html">VYRAL Media</a>
+        </li>
+
+        <li
+          class="nav-item relative inline-block leading-8 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white hover:after:w-full">
+          <a href="./services.html">Services</a>
+        </li>
+
+        <li
+          class="nav-item relative inline-block leading-8 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white after:w-full">
+          <a href="./web-and-app-design.html">Web/App Design</a>
+        </li>
+
+        <li
+          class="nav-item relative inline-block leading-8 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white hover:after:w-full">
+          <a href="#">TRIFID Club</a>
+        </li>
+
+        <li
+          class="nav-item relative inline-block leading-8 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white hover:after:w-full">
+          <a href="./get-in-touch.html">Get in touch</a>
+        </li>
+
+        <!-- Search & Hamburger (Desktop) -->
+        <li>
+          <ul class="gap-10 font-semibold text-sm hidden lg:flex">
+            <li class="cursor-pointer relative top-2 search-icon">
+              <i class="fa-solid fa-magnifying-glass text-lg"></i>  
+            </li>
+
+            <!-- Hamburger Icon -->
+            <li
+              class="hamburger-icon desktop-side-bar-hamburger flex items-center justify-center bg-black cursor-pointer size-8">
+              <div class="bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
+                <span class="relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+                <span class="block h-0.5 bg-white rounded"></span>
+                <span class="relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li
+          class="desktop-side-bar fixed top-0 h-dvh bg-[#fed332] w-sm -right-96 py-16 z-10 flex flex-col items-center gap-5 transition-all duration-700">
+          <span
+            class="desktop-side-bar-closer size-8 flex justify-center items-center relative -top-8 -right-[150px] bg-[#000000] hover:bg-blue-900 transition-all duration-300 ease-in-out cursor-pointer">
+            <i class="fa-solid fa-xmark text-xl text-white"></i>
+          </span>
+          <img src="./assets/img/logo.jpg" class="w-62" alt="" />
+          <span class="uppercase text-[16px] leading-5 w-46 font-normal">
+            WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT.
+          </span>
+          <span
+            class="size-10 flex justify-center items-center rounded-full bg-[#00000042] hover:bg-blue-900 transition-all duration-300 ease-in-out cursor-pointer">
+            <i class="fa-brands fa-instagram text-2xl text-white"></i>
+          </span>
+        </li>
+      </ul>
+
+      <!-- Hamburger Icon (Mobile) -->
+      <div id="hamburger"
+        class="hamburger-icon relative lg:hidden flex items-center justify-center bg-black cursor-pointer w-8 h-8">
+        <div class="bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
+          <span class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+          <span class="block h-0.5 bg-white rounded"></span>
+          <span class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+        </div>
+      </div>
+
+      <!-- Search Window -->
+      <div
+        class="search-window w-screen h-screen bg-white fixed inset-0 z-20 opacity-0 flex-col hidden items-center justify-center px-10 md:px-20">
+        <!-- Close Icon -->
+        <i
+          class="search-x fa-solid fa-xmark text-lg absolute top-8 right-28 cursor-pointer text-black hover:text-gray-600 transition-all duration-300"></i>
+
+        <!-- Search Input -->
+        <div class="flex items-center border-b-2 border-gray-500 w-full max-w-5xl">
+          <input type="search" placeholder="Search for..."
+            class="w-full outline-none text-2xl text-black placeholder:text-black font-semibold text-start" />
+          <img class="size-5" src="./assets/icon/dripicons-by-amit-jakhu/SVG/search.svg" alt="search icon" />
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Menu -->
+  <div
+    class="mobile-menu fixed pt-[70px] top-0 left-0 w-full -translate-y-full bg-white overflow-hidden transition-all duration-700 z-20 flex justify-center items-start lg:hidden">
+    <ul
+      class="nav-menu-mobile max-[639px]:px-5 max-[639px]:w-full sm:w-xl md:w-3xl md:px-10 lg:w-full lg:px-10 flex flex-col font-semibold text-[15px]">
+      <!-- Menu Items -->
+      <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+        <a href="index.html">Trifid Media</a>
+      </li>
+
+      <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+        <a href="services.html">Services</a>
+      </li>
+
+      <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+        <a href="web-and-app-design.html">Web/App Design</a>
+      </li>
+
+      <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+        <a href="#">TRIFID Club</a>
+      </li>
+
+      <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+        <a href="get-in-touch.html">Get in touch</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ================== HERO SECTION ================== -->
+  <section class="iphone-apps hero-section max-w-screen h-screen bg-neutral-800 overflow-hidden">
+    <div class="relative w-full h-full flex items-center justify-center">
+      <!-- Pill -->
+      <div
+        class="absolute z-0 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full w-full max-w-[400px] h-[120px] md:max-w-[500px] md:h-[160px] bg-gradient-to-br from-blue-400 to-blue-800 -rotate-45">
+      </div>
+
+      <!-- iPhone -->
+      <div
+        class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 flex items-center justify-center w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] aspect-[6/9]">
+        <img src="./assets/img/iPhone-2.png" alt="iphone" class="w-full h-auto object-contain" />
+
+        <div class="absolute left-[30%] md:left-[30.5%] top-[21%] w-[40%] h-[56%] rounded-3xl">
+          <div class="grid grid-cols-4 items-center justify-center gap-x-2.5 md:gap-x-2.5 gap-y-3 md:gap-y-4 pt-5 px-1">
+            <div class="app-1 size-5 md:size-7 bg-[#ff3b60] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#42ea66] rounded-lg"></div>
+            <div class="app-3 size-5 md:size-7 bg-[#ff50b7] rounded-lg"></div>
+            <div class="app-4 size-5 md:size-7 bg-[#ff7d35] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#f8d0d0] rounded-lg"></div>
+            <div class="app-6 size-5 md:size-7 bg-[#d404ce] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#1dbab4] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#ffd852] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#9108fa] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#ff5c25] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#9ec2de] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#ff6d59] rounded-lg"></div>
+            <div class="app-13 size-5 md:size-7 bg-[#ffffff] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#f9346b] rounded-lg"></div>
+            <div class="app-15 size-5 md:size-7 bg-[#ffd852] rounded-lg"></div>
+            <div class="app-16 size-5 md:size-7 bg-[#42ea66] rounded-lg"></div>
+            <div class="app-17 size-5 md:size-7 bg-[#42ead8] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#ff3b60] rounded-lg"></div>
+            <div class="size-5 md:size-7 bg-[#a06043] rounded-lg"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-heading translate-x-[110%]">
+        <h1 class="font-medium text-white text-lg sm:text-2xl md:text-4xl text-center">
+          We Build Apps <br />
+          That Users Love
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== SERVICES ================== -->
+
+  <section class="services-section min-h-screen w-full relative bg-neutral-800 pb-32 overflow-hidden">
+    <div class="relative pt-20">
+      <h2
+        class="services-title uppercase text-center text-[7rem] sm:text-[10rem] md:text-[14rem] font-['Anton'] leading-none bg-gradient-to-b from-purple-800/60 to-blue-800/60 text-transparent bg-clip-text">
+        Services
+      </h2>
+      <div class="services-heading absolute inset-0 flex flex-col items-center justify-center">
+        <h3 class="text-center text-white font-semibold text-3xl md:text-4xl leading-snug">
+          Mobile Application <br />
+          Development
+        </h3>
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto mt-24 px-6 md:px-12">
+      <!-- Box 1 -->
+      <div class="text-box-1 absolute bottom-0 left-0 md:left-6 px-4">
+        <h3 class="text-white font-semibold text-2xl md:text-4xl">
+          User Experience <br />
+          Design
+        </h3>
+        <p class="mt-4 md:mt-6 text-white text-base md:text-xl max-w-xs md:max-w-sm leading-relaxed">
+          UX designer will flesh out the user stories, journeys, and states to
+          create a clear, seamless and delightful experience.
+        </p>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="text-box-2 absolute bottom-0 right-0 md:right-6 px-4">
+        <h3 class="text-white font-semibold text-2xl md:text-4xl">
+          Visual Design
+        </h3>
+        <p class="mt-4 md:mt-6 text-white text-base md:text-xl max-w-xs md:max-w-sm leading-relaxed">
+          Simplicity is the ultimate sophistication. Work with our visual
+          design team to create an elegant design that incorporates the latest
+          trends and capabilities.
+        </p>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="text-box-3 absolute bottom-0 right-0 md:right-6 px-4">
+        <h3 class="text-white font-semibold text-2xl md:text-4xl">
+          Develop & Test
+        </h3>
+        <p class="mt-4 md:mt-6 text-white text-base md:text-xl max-w-sm md:max-w-sm leading-relaxed">
+          Agility is the name of the game. Our scrum-based Agile development
+          methodology ensures frequent builds and gives you plenty of time to
+          test and adjust. While our experienced Quality Assurance (QA) team
+          will identify and manage testing.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="services-color-box absolute bottom-1/2 top-1/2 left-1/2 -translate-x-1/2 w-[90%] max-w-md h-[220px] md:h-[900px] bg-color-[#3036ff]">
+    </div>
+  </section>
+
+  <!-- ================== CONTACT ================== -->
+  <section class="w-full bg-white py-10 px-6 md:px-12 lg:px-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <input type="text" placeholder="Name"
+        class="border border-black py-3 md:py-4 px-4 text-base md:text-lg placeholder:text-gray-500 w-full focus:outline-none focus:ring-1 focus:ring-black" />
+      <input type="email" placeholder="Email"
+        class="border border-black py-3 md:py-4 px-4 text-base md:text-lg placeholder:text-gray-500 w-full focus:outline-none focus:ring-1 focus:ring-black" />
+    </div>
+
+    <textarea
+      class="mt-5 placeholder:text-gray-500 border border-black p-4 w-full text-base md:text-lg rounded-md focus:outline-none focus:ring-1 focus:ring-black resize-none"
+      rows="8" placeholder="Message"></textarea>
+
+    <button
+      class="mt-6 bg-black px-10 md:px-16 py-3 md:py-4 cursor-pointer text-white border border-black hover:bg-white hover:text-black transition-all duration-300 font-medium text-base md:text-lg">
+      Send
+    </button>
+  </section>
+
+   <!-- ================== FOOTER ================== -->
+  <footer class="relative flex justify-center">
+    <div class="w-full bg-cover bg-center bg-[url('./assets/img/footer-bg.jpg')]">
+
+      <!-- Heading -->
+      <h2 class="text-3xl sm:text-4xl mt-6 font-thin text-center text-white uppercase px-4">
+        We make you visible.
+      </h2>
+
+      <!-- Footer Content -->
+      <div
+        class="flex flex-col sm:flex-row items-start sm:justify-start h-auto sm:h-[300px] px-6 sm:px-12 lg:px-20 py-10">
+
+        <div class="flex flex-col items-start gap-2 sm:gap-3 text-start sm:text-left">
+          <p class="text-white text-base sm:text-lg md:text-xl opacity-80">
+            <i class="fa-solid fa-phone mr-2"></i> +971 54 520 6506
+          </p>
+          <p class="text-white text-base sm:text-lg md:text-xl opacity-80">
+            <i class="fa-solid fa-globe mr-2"></i> www.vyral.ae
+          </p>
+          <p class="text-white text-base sm:text-lg md:text-xl opacity-80">
+            <i class="fa-solid fa-envelope mr-2"></i> Projects@vyral.ae
+          </p>
+          <p class="text-white text-base sm:text-lg md:text-xl opacity-80 max-w-[300px] sm:max-w-none">
+            <i class="fa-solid fa-location-dot mr-2"></i> Business Bay, Dubai, United Arab Emirates
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" target="_blank" rel="noreferrer noopener"
+    class="fixed bottom-4 left-4 z-50 inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#25d366]">
+    <div class="absolute z-10 top-0 left-0 w-full h-full rounded-full bg-[#25d366] animate-ping"></div>
+    <div class="relative z-20">
+      <svg fill="#fff" height="24px" width="24px" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308.00 308.00" xml:space="preserve" stroke="#fff"
+        transform="matrix(1, 0, 0, 1, 0, 0)">
+        <path
+          d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156 c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687 c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887 c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153 c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348 c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802 c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922 c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0 c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458 C233.168,179.508,230.845,178.393,227.904,176.981z" />
+        <path
+          d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z" />
+      </svg>
+    </div>
+  </a>
+
+  <!-- ================== SCRIPTS ================== -->
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- Custom JS -->
+  <script src="web-and-mobile-design.js"></script>
+  <script src="navbar.js"></script>
+</body>
+
+</html>

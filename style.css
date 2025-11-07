@@ -1,0 +1,158 @@
+/* Import Tailwind */
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'SF Pro Medium';
+  src: url('assets/fonts/sf-pro/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+}
+.sf-pro-medium {
+  font-family: 'SF Pro Medium', sans-serif;
+}
+@font-face {
+  font-family: 'Axiforma Black';
+  src: url('assets/fonts/axiforma/Axiforma-Black.woff') format('opentype');
+}
+.axiforma-black {
+  font-family: 'Axiforma Black', sans-serif;
+}
+@font-face {
+  font-family: 'Axiforma Medium';
+  src: url('assets/fonts/axiforma/Axiforma-Medium.woff') format('opentype');
+}
+.axiforma-medium {
+  font-family: 'Axiforma Medium', sans-serif;
+}
+
+/* Blobs in Company Profile */
+.blob {
+  border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+  animation: breathe 5s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+  }
+
+  50% {
+    transform: scale(1.1);
+    border-radius: 60% 50% 40% 60% / 60% 40% 50% 40%;
+  }
+}
+
+/* .parallax-bg {
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+} */
+
+
+
+/* -------------------- */
+/* Special Div (BigBox) */
+/* #bigBox {
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+} */
+
+.particle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#video-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+#scroll-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* #set-height {
+  display: block;
+}
+
+p#time font-family helvetica {
+  font-size: 24px;
+} */
+
+.text-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#overlay-text {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+  line-height: 1.3;
+}
+
+
+
+
+
+
+/* Import Tailwind */
+
+@import "tailwindcss";
+
+/* Hero Section */
+
+/* @keyframes heroMoveIn {
+  from {
+    scale: 1.4;
+  }
+
+  to {
+    scale: 1;
+  }
+} */
+
+/* .hero-containers-child {
+  animation: heroMoveIn 6s ease-out forwards;
+} */
+
+
+/* Blobs in Company Profile */
+
+.blob {
+  border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+  animation: breathe 5s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+  }
+
+  50% {
+    transform: scale(1.1);
+    border-radius: 60% 50% 40% 60% / 60% 40% 50% 40%;
+  }
+}
