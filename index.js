@@ -550,61 +550,63 @@ const videoOverlay = gsap.timeline({
   },
 });
 
-let text1split = SplitText.create("#overlay-text-box-1", { type: "words" });
-let text2split = SplitText.create("#overlay-text-box-2", { type: "words" });
-let text3split = SplitText.create("#overlay-text-box-3", { type: "words" });
-let text4split = SplitText.create("#overlay-text-box-1-sub");
-let text5split = SplitText.create("#overlay-text-box-2-sub");
+let text1split = SplitText.create("#overlay-text-box-1", { type: "chars" });
+let text2split = SplitText.create("#overlay-text-box-2", { type: "chars" });
+let text3split = SplitText.create("#overlay-text-box-3", { type: "chars" });
 
-videoOverlay
-  .add([
-    gsap.to(text4split.elements, {
-      y: -350,
-      opacity: 0,
-      autoAlpha: 0,
-      stagger: 0.05,
-    }),
-  ])
-  .add([
-    gsap.to(text1split.words, {
-      y: () => gsap.utils.random(-250, -350),
-      opacity: 0,
-      autoAlpha: 0,
-      stagger: { each: 0.05, from: "random" }, // random order
-    }),
-  ])
-  .add([
-    gsap.from(text2split.words, {
-      y: () => gsap.utils.random(250, 350), // random vertical offset
-      opacity: 0,
-      autoAlpha: 0,
-      stagger: { each: 0.08, from: "random" }, // random order
-    }),
-  ])
-  .add([
-    gsap.to(text2split.words, {
-      y: () => gsap.utils.random(-250, -350),
-      opacity: 0,
-      autoAlpha: 0,
-      stagger: { each: 0.06, from: "random" },
-    }),
-  ])
-  .add([
-    gsap.from(text3split.words, {
-      y: () => gsap.utils.random(250, 350),
-      opacity: 0,
-      autoAlpha: 0,
-      stagger: { each: 0.08, from: "random" },
-    }),
-  ])
-  .add([
-    gsap.from(text5split.elements, {
-      y: 350,
-      opacity: 0,
-      autoAlpha: 0,
-      stagger: 0.05,
-    }),
-  ]);
+videoOverlay.add([
+  gsap.to(text1split.chars, {
+    y: () => gsap.utils.random(-350, -1250),
+    opacity: 0,
+    stagger: { each: 0.07, from: "start" }, // random order
+    duration: 400,
+  }),
+  gsap.from(text2split.chars, {
+    delay: 100,
+    duration: 300,
+    y: () => gsap.utils.random(2050, 550), // random vertical offset
+    opacity: 0.8,
+    stagger: { each: 0.04, from: "random" }, // random order
+  }),
+  gsap.to(text2split.chars, {
+    delay: 400,
+    duration: 500,
+    y: () => gsap.utils.random(-1250, -550),
+    opacity: 0,
+    stagger: { each: 0.06, from: "random" },
+  }),
+  gsap.from(text3split.chars, {
+    delay: 500,
+    duration: 400,
+    y: () => gsap.utils.random(1250, 650),
+    opacity: 0,
+    stagger: { each: 0.08, from: "random" },
+  }),
+]);
+// .add([
+//   gsap.from(text2split.chars, {
+//     y: () => gsap.utils.random(250, 350), // random vertical offset
+//     opacity: 0.5,
+//     autoAlpha: 0,
+//     stagger: { each: 0.08, from: "random" }, // random order
+//   }),
+// ])
+// .add([
+//   gsap.to(text2split.chars, {
+//     y: () => gsap.utils.random(-250, -350),
+//     opacity: 0.5,
+//     autoAlpha: 0,
+//     stagger: { each: 0.06, from: "random" },
+//   }),
+// ])
+// .add([
+//   gsap.from(text3split.chars, {
+//     y: () => gsap.utils.random(250, 350),
+//     opacity: 0,
+//     autoAlpha: 0,
+//     stagger: { each: 0.08, from: "random" },
+//   }),
+// ]);
 
 // Sliders
 

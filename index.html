@@ -213,11 +213,11 @@
     >
       <!-- Background Image -->
       <div
-        class="hero-bg-img h-full w-full bg-[url('./assets/img/landing-bg-phone.jpg')] md:bg-[url('./assets/img/landing-bg-desk.png')] bg-cover bg-top-left"
+        class="hero-bg-img h-full w-full bg-[url('./assets/img/landing-bg-phone.jpg')] lg:bg-[url('./assets/img/landing-bg-desk.png')] bg-no-repeat bg-cover bg-bottom-left"
       ></div>
       <!-- Overlay -->
       <div
-        class="black-transparent-overlay w-full h-full absolute bottom-0 left-0 bg-black/20 z-10"
+        class="black-transparent-overlay w-full h-full absolute bottom-0 left-0 bg-black/20"
       ></div>
       <!-- Astronaut Image -->
       <!-- <img
@@ -226,16 +226,16 @@
       /> -->
 
       <!-- Text Content -->
-      <div class="absolute inset-0 md:hidden">
+      <div class="absolute inset-0 lg:hidden z-10">
         <div
           id="hero-main-content"
-          class="h-full md:relative md:z-0 flex flex-col lg:flex-row items-center justify-center w-full px-5 sm:px-10 lg:px-16 text-white"
+          class="h-full lg:relative lg:z-0 flex flex-col lg:flex-row items-center justify-center w-full px-5 sm:px-10 lg:px-16 text-white"
         >
           <div
             class="hero-txt-content h-full lg:h-auto flex flex-col justify-between items-start lg:justify-center lg:ml-40 lg:mb-32 sm:text-left pt-10 p-4 md:max-w-[800px]"
           >
             <h1
-              class="hero-heading axiforma-black mt-10 text-white text-end md:text-start text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight"
+              class="mx-auto hero-heading axiforma-black mt-10 text-white text-end md:text-start text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight"
             >
               We make you<br /> Visible
             </h1>
@@ -384,7 +384,7 @@
           <!-- Middle Image -->
 
           <div
-            class="w-[100%] origin-center min-[800px]:scale-[2] min-[500px]:scale-[1] scale-[2] flex justify-center max-[500px]:mt-30 items-center phone-box services-image min-[800px]:order-2 order-3"
+            class="w-full origin-center min-[800px]:scale-[2] min-[500px]:scale-[1] scale-[2] flex justify-center max-[500px]:mt-30 items-center phone-box services-image min-[800px]:order-2 order-3"
           >
             <div id="iphone" class="w-full mx relative">
               <!-- iPhone Image -->
@@ -394,7 +394,7 @@
                 class="w-full h-full phone-box services-image"
               />
               <div
-                class="absolute left-[50%] top-[50%] w-[36.2%] h-[69%] transform -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[14px] sm:rounded-[32px] min-[800px]:!rounded-[12px] lg:!rounded-[16px] xl:rounded-[18px]"
+                class="absolute left-[50%] top-[50%] w-[36.2%] h-[69%] transform -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[14px] min-[380px]:rounded-2xl min-[500px]:rounded-3xl sm:rounded-4xl min-[800px]:!rounded-[12px] lg:!rounded-[16px] xl:rounded-[18px]"
               >
                 <img
                   src="./assets/img/1.jpg"
@@ -824,9 +824,6 @@
         <div
           class="absolute inset-0 size-full flex flex-col items-center justify-center"
         >
-          <!-- <p class="text-xl md:text-3xl text-orange-600 uppercase text-center" id="overlay-text-box-1-sub">
-          Creative
-        </p> -->
           <h2
             id="overlay-text-box-1"
             class="text-[50px] sm:text-7xl md:text-9xl tracking-wider font-extrabold font-['Anton'] text-white uppercase text-center mt-4"
@@ -857,9 +854,6 @@
             social media <br />
             management
           </h2>
-          <!-- <p class="text-xl md:text-3xl text-orange-600 uppercase text-center mt-4" id="overlay-text-box-2-sub">
-          the only one of its kind in the region
-        </p> -->
         </div>
       </div>
     </section>

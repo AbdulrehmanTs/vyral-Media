@@ -82,8 +82,10 @@
     --leading-tight: 1.25;
     --leading-snug: 1.375;
     --leading-relaxed: 1.625;
+    --radius-sm: 0.25rem;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
     --radius-4xl: 2rem;
@@ -300,12 +302,6 @@
   }
   .top-\[21\%\] {
     top: 21%;
-  }
-  .top-\[49\%\] {
-    top: 49%;
-  }
-  .top-\[49\.8\%\] {
-    top: 49.8%;
   }
   .top-\[50\%\] {
     top: 50%;
@@ -630,9 +626,6 @@
   .h-\[69\.6\%\] {
     height: 69.6%;
   }
-  .h-\[70\%\] {
-    height: 70%;
-  }
   .h-\[80\%\] {
     height: 80%;
   }
@@ -722,9 +715,6 @@
   }
   .w-\[90\%\] {
     width: 90%;
-  }
-  .w-\[100\%\] {
-    width: 100%;
   }
   .w-\[218px\] {
     width: 218px;
@@ -963,23 +953,8 @@
   .rounded-4xl {
     border-radius: var(--radius-4xl);
   }
-  .rounded-\[10px\] {
-    border-radius: 10px;
-  }
   .rounded-\[14px\] {
     border-radius: 14px;
-  }
-  .rounded-\[20px\] {
-    border-radius: 20px;
-  }
-  .rounded-\[22px\] {
-    border-radius: 22px;
-  }
-  .rounded-\[40px\] {
-    border-radius: 40px;
-  }
-  .rounded-\[50px\] {
-    border-radius: 50px;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -1245,14 +1220,14 @@
   .bg-\[90\%_bottom\] {
     background-position: 90% bottom;
   }
+  .bg-bottom-left {
+    background-position: left bottom;
+  }
   .bg-center {
     background-position: center;
   }
   .bg-right {
     background-position: right;
-  }
-  .bg-top-left {
-    background-position: left top;
   }
   .bg-no-repeat {
     background-repeat: no-repeat;
@@ -1856,15 +1831,30 @@
       margin-top: calc(var(--spacing) * 30);
     }
   }
-  .min-\[110px\]\:rounded-\[68px\] {
-    @media (width >= 110px) {
-      border-radius: 68px;
+  .min-\[120px\]\:rounded-lg {
+    @media (width >= 120px) {
+      border-radius: var(--radius-lg);
+    }
+  }
+  .min-\[200px\]\:rounded-xl {
+    @media (width >= 200px) {
+      border-radius: var(--radius-xl);
+    }
+  }
+  .min-\[290px\]\:rounded-2xl {
+    @media (width >= 290px) {
+      border-radius: var(--radius-2xl);
     }
   }
   .min-\[375px\]\:text-8xl {
     @media (width >= 375px) {
       font-size: var(--text-8xl);
       line-height: var(--tw-leading, var(--text-8xl--line-height));
+    }
+  }
+  .min-\[380px\]\:rounded-2xl {
+    @media (width >= 380px) {
+      border-radius: var(--radius-2xl);
     }
   }
   .min-\[425px\]\:h-\[500px\] {
@@ -1885,6 +1875,11 @@
   .min-\[500px\]\:grid-cols-3 {
     @media (width >= 500px) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .min-\[500px\]\:rounded-3xl {
+    @media (width >= 500px) {
+      border-radius: var(--radius-3xl);
     }
   }
   .min-\[600px\]\:h-\[82vh\] {
@@ -2038,14 +2033,6 @@
       max-width: var(--container-sm);
     }
   }
-  .sm\:scale-120 {
-    @media (width >= 40rem) {
-      --tw-scale-x: 120%;
-      --tw-scale-y: 120%;
-      --tw-scale-z: 120%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
   .sm\:flex-row {
     @media (width >= 40rem) {
       flex-direction: row;
@@ -2061,44 +2048,9 @@
       gap: calc(var(--spacing) * 3);
     }
   }
-  .sm\:rounded-3xl {
+  .sm\:rounded-4xl {
     @media (width >= 40rem) {
-      border-radius: var(--radius-3xl);
-    }
-  }
-  .sm\:rounded-\[16px\] {
-    @media (width >= 40rem) {
-      border-radius: 16px;
-    }
-  }
-  .sm\:rounded-\[18px\] {
-    @media (width >= 40rem) {
-      border-radius: 18px;
-    }
-  }
-  .sm\:rounded-\[20px\] {
-    @media (width >= 40rem) {
-      border-radius: 20px;
-    }
-  }
-  .sm\:rounded-\[22px\] {
-    @media (width >= 40rem) {
-      border-radius: 22px;
-    }
-  }
-  .sm\:rounded-\[24px\] {
-    @media (width >= 40rem) {
-      border-radius: 24px;
-    }
-  }
-  .sm\:rounded-\[32px\] {
-    @media (width >= 40rem) {
-      border-radius: 32px;
-    }
-  }
-  .sm\:rounded-\[52px\] {
-    @media (width >= 40rem) {
-      border-radius: 52px;
+      border-radius: var(--radius-4xl);
     }
   }
   .sm\:px-6 {
@@ -2184,11 +2136,6 @@
       font-size: 10rem;
     }
   }
-  .md\:relative {
-    @media (width >= 48rem) {
-      position: relative;
-    }
-  }
   .md\:top-16 {
     @media (width >= 48rem) {
       top: calc(var(--spacing) * 16);
@@ -2199,11 +2146,6 @@
       right: calc(var(--spacing) * 6);
     }
   }
-  .md\:bottom-auto {
-    @media (width >= 48rem) {
-      bottom: auto;
-    }
-  }
   .md\:left-6 {
     @media (width >= 48rem) {
       left: calc(var(--spacing) * 6);
@@ -2212,11 +2154,6 @@
   .md\:left-\[30\.5\%\] {
     @media (width >= 48rem) {
       left: 30.5%;
-    }
-  }
-  .md\:z-0 {
-    @media (width >= 48rem) {
-      z-index: 0;
     }
   }
   .md\:order-first {
@@ -2242,11 +2179,6 @@
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
-    }
-  }
-  .md\:hidden {
-    @media (width >= 48rem) {
-      display: none;
     }
   }
   .md\:size-7 {
@@ -2365,14 +2297,6 @@
       max-width: var(--container-sm);
     }
   }
-  .md\:scale-100 {
-    @media (width >= 48rem) {
-      --tw-scale-x: 100%;
-      --tw-scale-y: 100%;
-      --tw-scale-z: 100%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
   .md\:grid-cols-2 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2381,6 +2305,11 @@
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
+    }
+  }
+  .md\:justify-center {
+    @media (width >= 48rem) {
+      justify-content: center;
     }
   }
   .md\:gap-6 {
@@ -2398,24 +2327,9 @@
       row-gap: calc(var(--spacing) * 4);
     }
   }
-  .md\:rounded-3xl {
+  .md\:rounded-\[1\.1rem\] {
     @media (width >= 48rem) {
-      border-radius: var(--radius-3xl);
-    }
-  }
-  .md\:rounded-\[18px\]\! {
-    @media (width >= 48rem) {
-      border-radius: 18px !important;
-    }
-  }
-  .md\:rounded-\[188px\]\! {
-    @media (width >= 48rem) {
-      border-radius: 188px !important;
-    }
-  }
-  .md\:bg-\[url\(\'\.\/assets\/img\/landing-bg-desk\.png\'\)\] {
-    @media (width >= 48rem) {
-      background-image: url('./assets/img/landing-bg-desk.png');
+      border-radius: 1.1rem;
     }
   }
   .md\:p-20 {
@@ -2559,6 +2473,16 @@
       font-size: 14rem;
     }
   }
+  .lg\:relative {
+    @media (width >= 64rem) {
+      position: relative;
+    }
+  }
+  .lg\:z-0 {
+    @media (width >= 64rem) {
+      z-index: 0;
+    }
+  }
   .lg\:my-20 {
     @media (width >= 64rem) {
       margin-block: calc(var(--spacing) * 20);
@@ -2699,14 +2623,14 @@
       border-radius: 16px !important;
     }
   }
-  .lg\:rounded-\[26px\]\! {
+  .lg\:rounded-3xl {
     @media (width >= 64rem) {
-      border-radius: 26px !important;
+      border-radius: var(--radius-3xl);
     }
   }
-  .lg\:rounded-\[226px\]\! {
+  .lg\:bg-\[url\(\'\.\/assets\/img\/landing-bg-desk\.png\'\)\] {
     @media (width >= 64rem) {
-      border-radius: 226px !important;
+      background-image: url('./assets/img/landing-bg-desk.png');
     }
   }
   .lg\:p-6 {
@@ -2811,44 +2735,9 @@
       max-width: var(--container-xl);
     }
   }
-  .xl\:rounded-\[10\%\] {
-    @media (width >= 80rem) {
-      border-radius: 10%;
-    }
-  }
   .xl\:rounded-\[18px\] {
     @media (width >= 80rem) {
       border-radius: 18px;
-    }
-  }
-  .xl\:rounded-\[20\%\] {
-    @media (width >= 80rem) {
-      border-radius: 20%;
-    }
-  }
-  .xl\:rounded-\[30px\]\! {
-    @media (width >= 80rem) {
-      border-radius: 30px !important;
-    }
-  }
-  .xl\:rounded-\[40\%\] {
-    @media (width >= 80rem) {
-      border-radius: 40%;
-    }
-  }
-  .xl\:rounded-\[50\%\] {
-    @media (width >= 80rem) {
-      border-radius: 50%;
-    }
-  }
-  .xl\:rounded-\[50px\] {
-    @media (width >= 80rem) {
-      border-radius: 50px;
-    }
-  }
-  .xl\:rounded-\[330px\]\! {
-    @media (width >= 80rem) {
-      border-radius: 330px !important;
     }
   }
   .xl\:px-12 {
@@ -2904,16 +2793,6 @@
       border-radius: 1.6rem;
     }
   }
-  .\32 xl\:rounded-\[42px\]\! {
-    @media (width >= 96rem) {
-      border-radius: 42px !important;
-    }
-  }
-  .\32 xl\:rounded-\[442px\]\! {
-    @media (width >= 96rem) {
-      border-radius: 442px !important;
-    }
-  }
   .\32 xl\:text-9xl {
     @media (width >= 96rem) {
       font-size: var(--text-9xl);
@@ -2928,16 +2807,6 @@
   .\32 xl\:text-\[250px\] {
     @media (width >= 96rem) {
       font-size: 250px;
-    }
-  }
-  .min-\[106rem\]\:rounded-\[44px\]\! {
-    @media (width >= 106rem) {
-      border-radius: 44px !important;
-    }
-  }
-  .min-\[110rem\]\:rounded-\[68px\] {
-    @media (width >= 110rem) {
-      border-radius: 68px;
     }
   }
 }
