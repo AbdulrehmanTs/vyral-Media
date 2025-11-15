@@ -243,7 +243,7 @@ let slideAnimation = gsap.to(slideDurationLine, {
     duration: 8,
     ease: "none",
     repeat: -1,
-    onRepeat: () => chevronDown.click(),
+    onRepeat: () => contentChange(),
 })
 
 
@@ -260,16 +260,52 @@ let contentChanger = () => {
 
 contentChanger();
 
+// let clickedIndex = 0;
+document.querySelectorAll('.pagination-btn').forEach((button, index)=>{
+    button.addEventListener('click', ()=>{
+        document.querySelectorAll('.pagination-btn').forEach((btn, idx)=>{
+            if (idx !== index) {
+                btn.classList.replace('bg-white', 'bg-white/20')
+                btn.classList.replace('w-8', 'w-4')
+                btn.classList.add('hover:bg-white/40')
+            }
+            else{
+                btn.classList.replace('bg-white/20', 'bg-white')
+                btn.classList.replace('w-4', 'w-8')
+                btn.classList.remove('hover:bg-white/40')
+            }
+        })
+        bgNumber = index + 1;
+        updateVisuals();
+        contentChanger();
+        animateSplitText([".title", ".heading", ".description"], "down"); // from bottom to top
+        slideAnimation.restart(true);
+    })
+})
+
+
 
 // Down button
-chevronDown?.addEventListener('click', () => {
+let contentChange = () => {
     bgNumber++;
     if (bgNumber > 6) bgNumber = 1;
     updateVisuals();
     contentChanger();
     animateSplitText([".title", ".heading", ".description"], "down"); // from bottom to top
     slideAnimation.restart(true);
-});
+    document.querySelectorAll('.pagination-btn').forEach((btn, idx)=>{
+        if (idx+1 !== bgNumber) {
+            btn.classList.replace('bg-white', 'bg-white/20')
+            btn.classList.replace('w-8', 'w-4')
+            btn.classList.add('hover:bg-white/40')
+        }
+        else{
+            btn.classList.replace('bg-white/20', 'bg-white')
+            btn.classList.replace('w-4', 'w-8')
+            btn.classList.remove('hover:bg-white/40')
+        }
+    })
+};
 
 // Up button
 chevronUp?.addEventListener('click', () => {
