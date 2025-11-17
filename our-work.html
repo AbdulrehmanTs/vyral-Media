@@ -144,43 +144,84 @@
         </ul>
     </div>
 
-    <section id="our-work-hero-section" class="h-screen w-full bg-[linear-gradient(to_top,#000000,#bc400b)] flex items-center justify-center">
-        <div class="w-full h-full max-w-6xl md:max-w-none px-4 sm:px-6 lg:px-8">
-                    <!-- Swiper -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+    <section  class="xl:h-[600px] h-screen w-full bg-black flex items-center justify-center pt-20">
+
+        <div class="w-full h-full max-w-6xl md:max-w-none px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <div class="w-full h-full flex flex-col justify-between items-center gap-3 md:gap-4 xl:gap-5 py-2 sm:py-2.5 md:py-3 lg:py-3.5 xl:py-4 2xl:py-5">
+                
+                
+                <!-- Floating Cards (Hero Visual) -->
+                <div class="relative flex justify-center items-center h-[450px] w-full max-w-3xl z-20">
+                    <div class="slides-container relative flex items-center justify-center w-56 sm:w-62 h-full rounded-xl overflow-hidden ">
+                        <div class="slide-video-container absolute z-10 w-56 sm:w-62 h-[380px] sm:h-[420px] bg-white/20 overflow-hidden">
+                            <video muted autoplay class="size-full object-cover">
+                                <source src="./assets/vid/65426-514139106_small.mp4" type="">
+                            </video>
+                        </div>
+                        <div class="slide-video-container absolute z-0 w-56 sm:w-62 h-[380px] sm:h-[420px] bg-white/20 overflow-hidden">
+                        <video muted autoplay class="size-full object-cover">
+                            <source src="./assets/vid/32667-392967111_small.mp4" type="">
+                        </video>
+                        </div>
+                        <div class="slide-video-container absolute z-0 w-56 sm:w-62 h-[380px] sm:h-[420px] bg-white/20 overflow-hidden">
+                            <video muted autoplay class="size-full object-cover">
+                                <source src="./assets/vid/coco-oil.mp4" type="">
+                            </video>
+                        </div>
+                        <div class="slide-video-container absolute z-0 w-56 sm:w-62 h-[380px] sm:h-[420px] bg-white/20 overflow-hidden">
+                            <video muted autoplay class="size-full object-cover">
+                                <source src="./assets/vid/smart-android-watch.mp4" type="">
+                            </video>
+                        </div>
+                        <div class="slide-video-container absolute z-0 w-56 sm:w-62 h-[380px] sm:h-[420px] bg-white/20 overflow-hidden">
+                            <video muted autoplay class="size-full object-cover">
+                                <source src="./assets/vid/smart-watch.mp4" type="">
+                            </video>
+                        </div>
+                        <div class="slide-video-container absolute z-0 w-56 sm:w-62 h-[380px] sm:h-[420px] bg-white/20 overflow-hidden">
+                            <video muted autoplay class="size-full object-cover">
+                                <source src="./assets/vid/skin-care.mp4" type="">
+                            </video>
+                        </div>
+                        <div class="slide-video-container absolute z-0 w-56 sm:w-62 h-[380px] sm:h-[420px] bg-white/20 overflow-hidden">
+                            <video muted autoplay class="size-full object-cover">
+                                <source src="./assets/vid/vid1.mp4" type="">
+                            </video>
+                        </div>
+                        <!-- Video duration line -->
+                        <div class="absolute bg-red-700 w-full h-0.5 z-20 bottom-0 rounded-b-2xl"></div>
+                    </div>
+
+                    
+                    <button class=" hidden prev-btn text-lg cursor-pointer border-2 border-white rounded-full 
+                        size-10 flex items-center justify-center text-white hover:bg-white hover:text-black 
+                        transition-all duration-300 absolute left-0">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+    
+                    <button class=" hidden next-btn text-lg cursor-pointer border-2 border-white rounded-full
+                        size-10 flex items-center justify-center text-white hover:bg-white hover:text-black
+                        transition-all duration-300 absolute right-0">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Bottom Thumbnails -->
+                <div  class="w-full! max-w-sm! flex justify-center gap-3 md:gap-4 min-h-max! z-30">
+                    <div style="scrollbar-width: none;" id="pagination-container" class="scroll-smooth overflow-x-auto flex items-center w-full! max-w-min! max-h-min! gap-3 md:gap-3.5 xl:gap-4">
+                        <button class="pagination-btn w-12! h-12! rounded-lg shrink-0 bg-white/10 backdrop-blur cursor-pointer relative overflow-hidden"><div class="pagination-overlay bg-transparent absolute inset-0 size-full"></div><img class="size-full object-cover" src="./assets/img/apple.jfif" alt=""></button>
+                        <button class="pagination-btn w-10! h-10! rounded-lg shrink-0 bg-white/10 backdrop-blur cursor-pointer relative overflow-hidden"><div class="pagination-overlay bg-black/50 absolute inset-0 size-full"></div><img class="size-full object-cover" src="./assets/img/dna.jfif" alt=""></button>
+                        <button class="pagination-btn w-10! h-10! rounded-lg shrink-0 bg-white/10 backdrop-blur cursor-pointer relative overflow-hidden"><div class="pagination-overlay bg-black/50 absolute inset-0 size-full"></div><img class="size-full object-cover" src="./assets/img/coconut.jfif" alt=""></button>
+                        <button class="pagination-btn w-10! h-10! rounded-lg shrink-0 bg-white/10 backdrop-blur cursor-pointer relative overflow-hidden"><div class="pagination-overlay bg-black/50 absolute inset-0 size-full"></div><img class="size-full object-cover" src="./assets/img/smart-watch.jfif" alt=""></button>
+                        <button class="pagination-btn w-10! h-10! rounded-lg shrink-0 bg-white/10 backdrop-blur cursor-pointer relative overflow-hidden"><div class="pagination-overlay bg-black/50 absolute inset-0 size-full"></div><img class="size-full object-cover" src="./assets/img/analog-watch.jfif" alt=""></button>
+                        <button class="pagination-btn w-10! h-10! rounded-lg shrink-0 bg-white/10 backdrop-blur cursor-pointer relative overflow-hidden"><div class="pagination-overlay bg-black/50 absolute inset-0 size-full"></div><img class="size-full object-cover" src="./assets/img/skin-care.jfif" alt=""></button>
+                        <button class="pagination-btn w-10! h-10! rounded-lg shrink-0 bg-white/10 backdrop-blur cursor-pointer relative overflow-hidden"><div class="pagination-overlay bg-black/50 absolute inset-0 size-full"></div><img class="size-full object-cover" src="./assets/img/danser.jfif" alt=""></button>
+                    </div>
+                </div>
             </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-            </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
         </div>
     </section>
+
             <!-- <div id="text-content-1" class="text-content w-full flex-col justify-center mt-8 absolute flex">
                     <h2 class="title font-['Urbanist'] font-bold text-transparent leading-none [-webkit-text-stroke:1px_#fff]
                                 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">1. Our Work</h2>
@@ -282,6 +323,7 @@
     <!-- custom js files -->
     <script src="our-work.js"></script>
     <script src="navbar.js"></script>
+
 
 </body>
 
