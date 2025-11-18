@@ -13,13 +13,24 @@ let tl = gsap.timeline({
 });
 
 // Split each heading and paragraph text into lines
-let split1 = new SplitText("#text-content-1 h2, #text-content-1 p", { type: "lines", mask: "lines", });
-let split2 = new SplitText("#text-content-2 h2, #text-content-2 p", { type: "lines", mask: "lines", });
-let split3 = new SplitText("#text-content-3 h2, #text-content-3 p", { type: "lines", mask: "lines", });
-let split4 = new SplitText("#text-content-4 h2, #text-content-4 p", { type: "lines", mask: "lines", });
+let split1 = new SplitText("#text-content-1 h2, #text-content-1 p", {
+  type: "lines",
+  mask: "lines",
+});
+let split2 = new SplitText("#text-content-2 h2, #text-content-2 p", {
+  type: "lines",
+  mask: "lines",
+});
+let split3 = new SplitText("#text-content-3 h2, #text-content-3 p", {
+  type: "lines",
+  mask: "lines",
+});
+let split4 = new SplitText("#text-content-4 h2, #text-content-4 p", {
+  type: "lines",
+  mask: "lines",
+});
 
 let video = document.querySelectorAll(".video");
-
 
 // Hide all text initially
 gsap.set([split2.lines, split3.lines, split4.lines], {
@@ -27,48 +38,57 @@ gsap.set([split2.lines, split3.lines, split4.lines], {
   y: 100,
 });
 gsap.set([split1.lines, split2.lines, split3.lines, split4.lines], {
-  mask: true
+  mask: true,
 });
 
 // Animate each text block one after another
 tl
   // Text Block 1
-  .to(split1.lines, {
-    opacity: 0,
-    y: -100,
-    duration: 1,
-    ease: "power2.in",
-    onComplete: () => {
-      video[0].pause();
-      gsap.to(video[0], {
-        y: "-100%",
-        duration: 1,
-        ease: "power2.in",
-      });
-      gsap.fromTo(video[1], {
-        y: "100%",
-      }, {
-        y: "0%",
-        duration: 1,
-        ease: "power2.in",
-      });
-      video[1].muted = true;
-      video[1].play();
+  .to(
+    split1.lines,
+    {
+      opacity: 0,
+      y: -100,
+      duration: 1,
+      ease: "power2.in",
+      onComplete: () => {
+        video[0].pause();
+        gsap.to(video[0], {
+          y: "-100%",
+          duration: 1,
+          ease: "power2.in",
+        });
+        gsap.fromTo(
+          video[1],
+          {
+            y: "100%",
+          },
+          {
+            y: "0%",
+            duration: 1,
+            ease: "power2.in",
+          }
+        );
+        video[1].muted = true;
+        video[1].play();
+      },
+      onReverseComplete: () => {
+        video[1].pause();
+        gsap.to(video[1], {
+          y: "100%",
+          duration: 1,
+          ease: "power2.in",
+        });
+        gsap.fromTo(
+          video[0],
+          { y: "-100%" },
+          { y: "0%", duration: 1, ease: "power2.in" }
+        );
+        video[0].play();
+      },
     },
-    onReverseComplete: () => {
-      video[1].pause();
-      gsap.to(video[1], {
-        y: "100%",
-        duration: 1,
-        ease: "power2.in",
-      });
-      gsap.fromTo(video[0],
-        { y: "-100%" },
-        { y: "0%", duration: 1, ease: "power2.in" }
-      );
-      video[0].play();
-    },
-  }, "+=0.5")
+    "+=0.5"
+  )
 
   // Text Block 2
   .to(split2.lines, {
@@ -78,41 +98,50 @@ tl
     duration: 1,
     ease: "power2.out",
   })
-  .to(split2.lines, {
-    opacity: 0,
-    y: -100,
-    duration: 1,
-    ease: "power2.in",
-    onComplete: () => {
-      video[1].pause();
-      gsap.to(video[1], {
-        y: "-100%",
-        duration: 1,
-        ease: "power2.in",
-      });
-      gsap.fromTo(video[2], {
-        y: "100%",
-      }, {
-        y: "0%",
-        duration: 1,
-        ease: "power2.in",
-      });
-      video[2].play();
+  .to(
+    split2.lines,
+    {
+      opacity: 0,
+      y: -100,
+      duration: 1,
+      ease: "power2.in",
+      onComplete: () => {
+        video[1].pause();
+        gsap.to(video[1], {
+          y: "-100%",
+          duration: 1,
+          ease: "power2.in",
+        });
+        gsap.fromTo(
+          video[2],
+          {
+            y: "100%",
+          },
+          {
+            y: "0%",
+            duration: 1,
+            ease: "power2.in",
+          }
+        );
+        video[2].play();
+      },
+      onReverseComplete: () => {
+        video[2].pause();
+        gsap.to(video[2], {
+          y: "100%",
+          duration: 1,
+          ease: "power2.in",
+        });
+        gsap.fromTo(
+          video[1],
+          { y: "-100%" },
+          { y: "0%", duration: 1, ease: "power2.in" }
+        );
+        video[1].play();
+      },
     },
-    onReverseComplete: () => {
-      video[2].pause();
-      gsap.to(video[2], {
-        y: "100%",
-        duration: 1,
-        ease: "power2.in",
-      });
-      gsap.fromTo(video[1],
-        { y: "-100%" },
-        { y: "0%", duration: 1, ease: "power2.in" }
-      );
-      video[1].play();
-    },
-  }, "+=0.5")
+    "+=0.5"
+  )
 
   // Text Block 3
   .to(split3.lines, {
@@ -122,41 +151,50 @@ tl
     duration: 1,
     ease: "power2.out",
   })
-  .to(split3.lines, {
-    opacity: 0,
-    y: -100,
-    duration: 1,
-    ease: "power2.in",
-    onComplete: () => {
-      video[2].pause();
-      gsap.to(video[2], {
-        y: "-100%",
-        duration: 1,
-        ease: "power2.in",
-      });
-      gsap.fromTo(video[3], {
-        y: "100%"
-      }, {
-        y: "0%",
-        duration: 1,
-        ease: "power2.in",
-      });
-      video[3].play();
+  .to(
+    split3.lines,
+    {
+      opacity: 0,
+      y: -100,
+      duration: 1,
+      ease: "power2.in",
+      onComplete: () => {
+        video[2].pause();
+        gsap.to(video[2], {
+          y: "-100%",
+          duration: 1,
+          ease: "power2.in",
+        });
+        gsap.fromTo(
+          video[3],
+          {
+            y: "100%",
+          },
+          {
+            y: "0%",
+            duration: 1,
+            ease: "power2.in",
+          }
+        );
+        video[3].play();
+      },
+      onReverseComplete: () => {
+        video[3].pause();
+        gsap.to(video[3], {
+          y: "100%",
+          duration: 1,
+          ease: "power2.in",
+        });
+        gsap.fromTo(
+          video[2],
+          { y: "-100%" },
+          { y: "0%", duration: 1, ease: "power2.in" }
+        );
+        video[2].play();
+      },
     },
-    onReverseComplete: () => {
-      video[3].pause();
-      gsap.to(video[3], {
-        y: "100%",
-        duration: 1,
-        ease: "power2.in",
-      });
-      gsap.fromTo(video[2],
-        { y: "-100%" },
-        { y: "0%", duration: 1, ease: "power2.in" }
-      );
-      video[2].play();
-    },
-  }, "+=0.5")
+    "+=0.5"
+  )
 
   // Text Block 4
   .to(split4.lines, {
@@ -166,20 +204,62 @@ tl
     duration: 1,
     ease: "power2.out",
   })
-  .to(split4.lines, {
-    opacity: 0,
-    y: -100,
-    duration: 1,
-    ease: "power2.in",
-    onComplete: () => {
-      video[3].pause();
+  .to(
+    split4.lines,
+    {
+      opacity: 0,
+      y: -100,
+      duration: 1,
+      ease: "power2.in",
+      onComplete: () => {
+        video[3].pause();
+      },
+      onReverseComplete: () => {
+        video[3].play();
+      },
     },
-    onReverseComplete: () => {
-      video[3].play();
-    },
-  }, "+=0.5");
+    "+=0.5"
+  );
 
+// Auto-generate thumbnails from videos
+document.addEventListener("DOMContentLoaded", () => {
+  const slideVideos = document.querySelectorAll(".slide-video-container video");
+  const paginationContainer = document.getElementById("pagination-container");
 
+  paginationContainer.innerHTML = ""; // Clear existing manual thumbnails
+
+  slideVideos.forEach((video, index) => {
+    const thumbBtn = document.createElement("button");
+    thumbBtn.className =
+    "pagination-btn w-12! h-16! bg-white/10 backdrop-blur border-2 border-gray-700/50 cursor-pointer relative overflow-hidden";
+    
+    const img = document.createElement("img");
+    img.className = "size-full object-cover";
+    img.alt = "video thumbnail";
+
+    thumbBtn.appendChild(img);
+    paginationContainer.appendChild(thumbBtn);
+
+    // --- Generate thumbnail from video ---
+    video.addEventListener("loadeddata", () => {
+      video.currentTime = 1; // capture frame at 1 sec
+    });
+
+    video.addEventListener("seeked", () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = 200;
+      canvas.height = 300;
+
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+      img.src = canvas.toDataURL("image/jpeg");
+
+      // If you want full resolution:
+      // img.src = canvas.toDataURL();
+    });
+  });
+});
 
 // Hero Video Slider
 let slideVideos = document.querySelectorAll(".slide-video-container");
@@ -188,12 +268,16 @@ let videoDurationLine = document.querySelector(".video-duration-line");
 let videoIndex = 1;
 
 // Pagination click
-paginationButtons.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    videoIndex = index + 1;
-    videoChanger();
+setTimeout(() => {
+  paginationButtons = document.querySelectorAll(".pagination-btn");
+
+  paginationButtons?.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      videoIndex = index + 1;
+      videoChanger();
+    });
   });
-});
+}, 500); // slight delay to allow thumbs to render
 
 // Next/Prev buttons
 document.querySelector(".next-btn").addEventListener("click", () => {
@@ -213,20 +297,36 @@ let videoChanger = () => {
     let vid = video.children[0]; // the <video> element inside container
 
     if (index === videoIndex - 1) {
+      const syncScaleWithPlayback = () => {
+        const duration = vid.duration;
+        const current = vid.currentTime;
+
+        if (!isNaN(duration) && duration > 0) {
+          const progress = current / duration; // 0 → 1
+
+          // Animate scaleY smoothly with GSAP
+          gsap.to(videoDurationLine, {
+            scaleY: progress,
+            ease: "power2.out",
+          });
+        }
+      };
+
+      // When video metadata loads, update height
+      vid.addEventListener("timeupdate", syncScaleWithPlayback);
+
       // ACTIVE video
       gsap.to(video, { opacity: 1, duration: 0.6, ease: "power2.out" });
 
       // Update pagination buttons
-      paginationButtons.forEach((btn) => {
-        btn.classList.replace("h-12!", "h-10!");
-        btn.classList.replace("w-12!", "w-10!");
-        btn.querySelector(".pagination-overlay").classList.replace("bg-transparent", "bg-black/50");
+      paginationButtons?.forEach((btn) => {
+        btn.classList.replace("border-red-700", "border-gray-700/50");
       });
-      paginationButtons[videoIndex - 1].classList.replace("h-10!", "h-12!");
-      paginationButtons[videoIndex - 1].classList.replace("w-10!", "w-12!");
-      paginationButtons[videoIndex - 1].querySelector(".pagination-overlay").classList.replace("bg-black/50", "bg-transparent");
+      paginationButtons[videoIndex - 1]?.classList.replace(
+        "border-gray-700/50",
+        "border-red-700"
+      );
 
-      video.classList.replace("z-0", "z-10");
       vid.currentTime = 0;
       vid.play();
 
@@ -236,7 +336,6 @@ let videoChanger = () => {
         if (videoIndex > slideVideos.length) videoIndex = 1;
         videoChanger();
       };
-
     } else {
       // INACTIVE videos
       gsap.to(video, { opacity: 0, duration: 0.6, ease: "power2.out" });
@@ -256,10 +355,10 @@ videoChanger();
 
 // function centerChild(index) {
 //     const child = children[index];
-    
+
 //     // container center
 //     const containerCenter = paginationContainer.offsetWidth / 2;
-    
+
 //     // child center relative to container
 //     const childLeft = child.offsetLeft;
 //     const childWidth = child.offsetWidth;
