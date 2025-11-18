@@ -1,6 +1,6 @@
 // Elements
-const chevronUp = document.querySelector('.fa-chevron-up');
-const chevronDown = document.querySelector('.fa-chevron-down');
+const prevBtn= document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
 const servicesHero = document.querySelector('.services-hero');
 const progressLine = document.querySelector('.progress-line');
 const progressStart = document.querySelector('.progress-start');
@@ -263,18 +263,7 @@ contentChanger();
 // let clickedIndex = 0;
 document.querySelectorAll('.pagination-btn').forEach((button, index)=>{
     button.addEventListener('click', ()=>{
-        document.querySelectorAll('.pagination-btn').forEach((btn, idx)=>{
-            if (idx !== index) {
-                btn.classList.replace('bg-white', 'bg-white/20')
-                btn.classList.replace('w-8', 'w-4')
-                btn.classList.add('hover:bg-white/40')
-            }
-            else{
-                btn.classList.replace('bg-white/20', 'bg-white')
-                btn.classList.replace('w-4', 'w-8')
-                btn.classList.remove('hover:bg-white/40')
-            }
-        })
+        paginationfunc(index+1);
         bgNumber = index + 1;
         updateVisuals();
         contentChanger();
@@ -283,9 +272,24 @@ document.querySelectorAll('.pagination-btn').forEach((button, index)=>{
     })
 })
 
+// pagination buttons functionality
+let paginationfunc = (contentNum) => {
+    document.querySelectorAll('.pagination-btn').forEach((btn, idx)=>{
+       if (idx+1 !== contentNum) {
+           btn.classList.replace('bg-white', 'bg-white/20')
+           btn.classList.replace('w-8', 'w-4')
+           btn.classList.add('hover:bg-white/40')
+       }
+       else{
+           btn.classList.replace('bg-white/20', 'bg-white')
+           btn.classList.replace('w-4', 'w-8')
+           btn.classList.remove('hover:bg-white/40')
+       }
+    })
+}
 
 
-// Down button
+
 let contentChange = () => {
     bgNumber++;
     if (bgNumber > 6) bgNumber = 1;
@@ -293,28 +297,29 @@ let contentChange = () => {
     contentChanger();
     animateSplitText([".title", ".heading", ".description"], "down"); // from bottom to top
     slideAnimation.restart(true);
-    document.querySelectorAll('.pagination-btn').forEach((btn, idx)=>{
-        if (idx+1 !== bgNumber) {
-            btn.classList.replace('bg-white', 'bg-white/20')
-            btn.classList.replace('w-8', 'w-4')
-            btn.classList.add('hover:bg-white/40')
-        }
-        else{
-            btn.classList.replace('bg-white/20', 'bg-white')
-            btn.classList.replace('w-4', 'w-8')
-            btn.classList.remove('hover:bg-white/40')
-        }
-    })
+    paginationfunc(bgNumber);
 };
 
-// Up button
-chevronUp?.addEventListener('click', () => {
+// Prev button
+prevBtn?.addEventListener('click', () => {
     bgNumber--;
     if (bgNumber < 1) bgNumber = 6;
     updateVisuals();
     contentChanger();
     animateSplitText([".title", ".heading", ".description"], "up"); // from top to bottom
     slideAnimation.restart(true);
+    paginationfunc(bgNumber);
+});
+
+// Next button
+nextBtn?.addEventListener('click', () => {
+    bgNumber++;
+    if (bgNumber > 6) bgNumber = 1;
+    updateVisuals();
+    contentChanger();
+    animateSplitText([".title", ".heading", ".description"], "up"); // from top to bottom
+    slideAnimation.restart(true);
+    paginationfunc(bgNumber);
 });
 
 
